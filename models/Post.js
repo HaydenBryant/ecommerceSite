@@ -7,11 +7,11 @@ const PostSchema = new Schema({
         required: true
     },
     item: {
-        type: String
+        type: String,
         required: true
     },
     condition: {
-        type: String
+        type: String,
         required: true
     },
     date: {
@@ -19,42 +19,41 @@ const PostSchema = new Schema({
         default: Date.now
     },
     description: {
-        type: Date,
+        type: String,
         required: true
     },
     startingBid: {
-        type: Number,
-        required: true
+        type: Number
     },
     buyNow: {
         type: Number
     },
     bidEndDate: {
-        type: Date,
-        required: true
+        type: Date
     },
     shippingCost: {
-        type: Number,
-        required: true
+        type: Number
     },
     img: {
         data: Buffer,
         contentType: String
     },
-    bid: {
+    bid: [{
         amount: {
             type: Number,
             required: true
         },
         email: {
-            type: String
+            type: String,
             required: true
         },
-    },
-    comments: {
-        type: String,
-        required: true
-    }
+    }],
+    comments: [{
+        text: {
+            type: String,
+            required: true
+        }
+    }]
 })
 
 module.exports = Post = mongoose.model("post", PostSchema)

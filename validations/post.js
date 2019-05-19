@@ -1,8 +1,8 @@
 const validator = require("validator")
 
-const isEmpty = require("/is-empty.js")
+const isEmpty = require("./is-empty.js")
 
-module.exports = function validatePostInput(date) {
+module.exports = function validatePostInput(data) {
     let errors = {}
 
     data.email = !isEmpty(data.email) ? data.email : "";
@@ -11,27 +11,27 @@ module.exports = function validatePostInput(date) {
     data.description = !isEmpty(data.description) ? data.description : "";
     data.shippingCost = !isEmpty(data.shippingCost) ? data.shippingCost : "";
     data.startingBid = !isEmpty(data.startingBid) ? data.startingBid : "";
-    data.buyNow = !isEmpty(data.buyNow) ? data.buyNow : "";
-}
+    data.buyNow = !isEmpty(data.buyNow) ? data.buyNow : ""
 
-if (validator.isEmpty(data.email){
-    errors.email = "Post email is required."
-})
-if (!validator.isEmail(data.email){
-    errors.email = "Post email is invalid."
-})
-if (validator.isEmpty(data.item){
-    errors.item = "Post item is required."
-})
-if (validator.isEmpty(data.condition){
-    errors.condition = "Post condition is required."
-})
-if (validator.isEmpty(data.description){
-    errors.description = "Post description is required."
-})
-if (validator.isEmpty(data.shippingCost){
-    errors.shippingCost = "Post shippingCost is required."
-})
-if (validator.isEmpty(data.startingBid && validator.isEmpty(data.buyNow)){
-    errors.buyNow = "Must have either a starting bid or buy now bid"
-})
+    if (validator.isEmpty(data.email)){
+        errors.email = "Post email is required."
+    }
+    if (!validator.isEmail(data.email)){
+        errors.email = "Post email is invalid."
+    }
+    if (validator.isEmpty(data.item)){
+        errors.item = "Post item is required."
+    }
+    if (validator.isEmpty(data.condition)){
+        errors.condition = "Post condition is required."
+    }
+    if (validator.isEmpty(data.description)){
+        errors.description = "Post description is required."
+    }
+    if (validator.isEmpty(data.shippingCost)){
+        errors.shippingCost = "Post shippingCost is required."
+    }
+    if (validator.isEmpty(data.startingBid) && validator.isEmpty(data.buyNow)){
+        errors.buyNow = "Must have either a starting bid or buy now bid"
+    }
+}
