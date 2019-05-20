@@ -1,7 +1,7 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const bodyParser = require("body-parser")
-const multer = require("multer")
+// const multer = require("multer")
 
 //get routes 
 const posts = require("./routes/api/posts.js")
