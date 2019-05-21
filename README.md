@@ -1,0 +1,1 @@
+Beginning of a simple ecommerce site to post items for sale and bid on them. created using mern stack.
