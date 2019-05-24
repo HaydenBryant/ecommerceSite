@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Route, Switch}  from "react-router-dom"
+import { BrowserRouter as Router, Route } from "react-router-dom"
+
+import Post from "./components/Post";
+
 
 class App extends Component {
   render() {
